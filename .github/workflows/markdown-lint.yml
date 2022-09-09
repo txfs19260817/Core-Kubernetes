@@ -25,10 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Markdown Linting Action
-      - name: Lint changelog file
-        uses: docker://avtodev/markdown-lint:v1 # fastest way
-        with:
-          rules: '/lint/rules/changelog.js'
-          config: '/lint/config/changelog.yml'
-          args: './**/*.md'
+      # Setup Node.js environment
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.4.1
+        
+      # Lint Markdown files
+      - run: npx markdownlint-cli ./**/*.md --disable MD010 MD013 MD014 MD034
