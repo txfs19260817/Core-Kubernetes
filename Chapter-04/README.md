@@ -1,3 +1,5 @@
+# Ch4. 为我们 Pod 中的进程使用 cgroups
+
 ![Figure 4.1 The processes involved in container startup](../_resources/Figure4.1.svg)
 
 我们进一步细化一个 Pod 的创建过程。kubelet 先调用 CRI 把 Pause 镜像拉取下来并启动 Pause 容器，接着使用 CNI 给容器分配 IP，再然后运行一个或多个 Pause 容器。Pause 容器起到占位符的作用，kubelet 在其中创建 namespace 和 cgroup，以便容器在它们的控制下运行。直至 Pause 容器被添加到 namespace，应用程序才开始从空闲状态启动。
