@@ -4,8 +4,6 @@
 
 ![Figure 3.1 Bootstrapping with Linux primitives](../_resources/Figure3.1.svg)
 
-_Figure 3.1 Bootstrapping with Linux primitives_
-
 图 3.1 展示了在 Kubernetes 中创建和运行一个 Pod 的一个简化版过程：kubelet 要先发现自己应该去运行一个容器，再通过与容器运行时交流，启动一个叫 _pause_ 的容器，它给 Linux 给容器创建网络的时间。pause 容器是将要运行的应用程序的前身，它存在的目的是创建一个初始 home 来引导（bootstrap）新容器的网络进程与其 PID。
 
 ## 什么是 Linux 原语
