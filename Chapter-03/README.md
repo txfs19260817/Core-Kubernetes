@@ -2,7 +2,7 @@
 
 这章介绍通过几个已经存在于操作系统中的 Linux 原语（primitives）来构建一个 Pod。
 
-![Figure 3.1](../_resources/Figure-1.svg)
+![Figure 3.1 Bootstrapping with Linux primitives](../_resources/Figure3.1.svg)
 
 _Figure 3.1 Bootstrapping with Linux primitives_
 
@@ -153,9 +153,7 @@ root@kind-control-plane:/# ps -ax | wc -l # 再回到容器中计算 Pod 创建�
 
 运行一个 Pod 和运行别的程序对用户来说没什么区别，同样在输入输出、消耗计算和网络资源，以及依赖共享库和操作系统底层工具等。而 kubelet 做了很多类似 Linux 管理员的工作，比如在程序执行之前为其创建了一个隔离的目录、CPU、内存、网络、namespace 限制和其他资源，在程序退出之后再清理掉这些资源。
 
-![Figure 3.2](../_resources/Figure3.2-1.svg)
-
-_Figure 3.2 The kubelet/Pod life cycle control loop_
+![Figure 3.2 The kubelet/Pod life cycle control loop](../_resources/Figure3.2.svg)
 
 图 3.2 展示的是 kubelet/Pod 生命周期，它是最底层的控制循环之一。
 
@@ -223,9 +221,7 @@ $ kubectl exec -t -i core-k8s mount | grep resolv.conf
 
 ### 用 chroot 创建一个孤立的进程
 
-![Figure 3.3](../_resources/Figure3.3-1.png)
-
-_Figure 3.3 The chroot namespace compared with the host root filesystem_
+![Figure 3.3 The chroot namespace compared with the host root filesystem](../_resources/Figure3.3.png)
 
 我们用 [chroot](https://man7.org/linux/man-pages/man2/chroot.2.html) 为一个进程创建一个与外部隔离的根目录，具体的步骤为：
 
@@ -482,9 +478,7 @@ root@kind-control-plane:/#
 
 ### 联网问题
 
-![Figure 3.4](../_resources/Figure3.4-1.svg)
-
-_Figure 3.4 An example of a real container_
+![Figure 3.4 An example of a real container](../_resources/Figure3.4.svg)
 
 图 3.4 描述的是一个真实的容器与 Kubernetes 集群的交互。我们在上一节手工制作的“容器”与之相比没有网卡，也没有一个集群中独立的 IP，因此面对微服务常常需要与其他服务进行沟通的场景，我们自制的“容器”是无法做到的，更不用说借助 DNS 进行服务发现、注入证书之类的能力了。
 

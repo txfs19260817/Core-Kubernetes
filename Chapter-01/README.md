@@ -19,9 +19,7 @@
 
 Puppet、Chef、Mesos、Ansible 和 SaltStack 等技术为解决这些问题应运而生。Kubernetes 也借鉴了这些技术，它在 Linux 环境中使用特权容器。例如，Linux 系统中的特权容器可以管理 iptables 规则，以便将流量路由到应用程序（这正是 Kubernetes 服务代理 kubeproxy 的工作）。
 
-![Figure 1.1](../_resources/Figure1.1.svg)
-
-_Figure 1.1 Applications running in containers_
+![Figure 1.1 Applications running in containers](../_resources/Figure1.1.svg)
 
 ## 容器与镜像
 
@@ -39,9 +37,7 @@ _Figure 1.1 Applications running in containers_
 
 ## Kubernetes 的基础特性
 
-![Figure 1.2](../_resources/Figure1.2.svg)
-
-_Figure 1.2 An example Kubernetes cluster_
+![Figure 1.2 An example Kubernetes cluster](../_resources/Figure1.2.svg)
 
 Kubernetes 中的一切对象可由纯文本文件定义。例如通常我们用 YAML 或 JSON，以声明的方式来运行你的 OCI 镜像、设置网络规则或 RBAC。
 
@@ -61,9 +57,7 @@ Kubernetes 是一个最终一致的系统。当我们通过 Kubernetes API 向�
 
 **主旨：Kubernetes 中绝大部分事物都是为了支持 Pod 而存在的。**
 
-![Figure 1.3](../_resources/Figure1.3.svg)
-
-_Figure 1.3 The control plane and worker nodes_
+![Figure 1.3 The control plane and worker nodes](../_resources/Figure1.3.svg)
 
 Kubernetes 的大致架构：
 

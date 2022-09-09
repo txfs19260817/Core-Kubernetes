@@ -2,15 +2,11 @@
 
 Pod 是可以部署到 Kubernetes 集群中的最小原子单元。Kubernetes 是围绕着 Pod 的定义建立的。
 
-![Figure 2.1](../_resources/Figure2.1.svg)
-
-_Figure 2.1 A Pod_
+![Figure 2.1 A Pod](../_resources/Figure2.1.svg)
 
 ## 一个网络应用的例子
 
-![Figure 2.2](../_resources/Figure2.2.svg)
-
-_Figure 2.2 A web application architecture_
+![Figure 2.2 A web application architecture](../_resources/Figure2.2.svg)
 
 如图 2.2 展示了一个网络应用架构，它包含：
 
@@ -58,9 +54,7 @@ _Figure 2.2 A web application architecture_
 
 ### 高级 Kubernetes API
 
-![Figure 2.3](../_resources/Figure2.3.svg)
-
-_Figure 2.3 The web application running on Kubernetes_
+![Figure 2.3 The web application running on Kubernetes](../_resources/Figure2.3.svg)
 
 许多 Kubernetes API 对象要么直接使用 Pod，要么是支持 Pod 的 API 对象，如：
 
@@ -79,9 +73,7 @@ Kubernetes 命名空间和 Linux 命名空间不同，但 Pod 依托于后者。
 
 ### Kubernetes 基础设施与 Pod
 
-![Figure 2.4](../_resources/Figure2.4.svg)
-
-_Figure 2.4 A node_
+![Figure 2.4 A node](../_resources/Figure2.4.svg)
 
 Kubernetes 节点的定义是一台运行一套 Kubernetes 组件的服务器，具体地，它的组成部分包含：
 
@@ -123,8 +115,7 @@ API 对象 Node 的 YAML 定义里会描述以下信息：
 
 ### 网络应用与控制平面
 
-![Figure 2.5](../_resources/Figure2.5.svg)
-_Figure 2.5 The control plane_
+![Figure 2.5 The control plane](../_resources/Figure2.5.svg)
 
 高可用需求意味着服务要履行服务级别协议（service-level agreement, SLA），以及别的需求：缩放、节约成本、容器版本控制、用户和应用安全。这些需求 Kubernetes 都能做到。
 
@@ -221,8 +212,7 @@ cloud-controller-manager 组件是基于一种插件机制来构造的，这种�
 
 执行 `kubectl scale` 可以增加和减少集群中运行的 Pod 数量。
 
-![Figure 2.6](../_resources/Figure3.6.svg)
-_Figure 2.6 The sequence of operations for the kubectl scale command_
+![Figure 2.6 The sequence of operations for the kubectl scale command](../_resources/Figure3.6.svg)
 
 下面考虑三种情况：Pod 停运、节点故障和软件更新。
 
